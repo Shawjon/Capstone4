@@ -10,6 +10,7 @@
     color: black;
     border: 2px solid #4CAF50; 
     margin: 60px;
+    
 }
 .button:hover{
 
@@ -39,4 +40,17 @@
   background: black;
   min-height: 25px;
   padding: 10px;
+}
+.footer {
+    
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-height: 15%;
+    padding: 50px;
+    background-color: #9c9696;
+    text-align: left;
+    overflow: scroll;
+    font-size: 20px;
 }
