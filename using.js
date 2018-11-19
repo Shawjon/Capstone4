@@ -50,46 +50,7 @@ var items = [
         price: .90,
         spot: 9,
     },
-    // {
-    //     name: "Ham",
-    //     price: 3.50,
-    //     spot: 10,
-    // },
-    // {
-    //     name: "Provelone",
-    //     price: 2.50,
-    //     spot: 11,
-    // },
-    // {
-    //     name: "Cheddar",
-    //     price: 2.50,
-    //     spot: 12,
-    // },
-    // {
-    //     name: "Swiss",
-    //     price: 3.50,
-    //     spot: 13,
-    // },
-    // {
-    //     name: "Havarit",
-    //     price: 3.50,
-    //     spot: 14,
-    // },
-    // {
-    //     name: "Oreos",
-    //     price: 2.50,
-    //     spot: 15,
-    // },
-    // {
-    //     name: "Chips",
-    //     price: 1.50,
-    //     spot: 16,
-    // },
-    // {
-    //     name: "Pop",
-    //     price: 1.50,
-    //     spot: 17,
-    // },
+
 
 
 ];
@@ -102,11 +63,14 @@ function makeList(items){
     document.writeln("<span class='top' id='right' onclick='checkOut()'>Check out</span>");
     for (var i = 0; i < items.length; i++) {
         
-        document.writeln("<div class='button' id='item-" + items[i].name + "'>" + items[i].name +"<br>$"+items[i].price+ "</div>");
-        //var item = {name:items[i].name, price:floatParse(items[i].price)};
+        document.writeln("<button class='button' id='item-" + items[i].name + "'>" + items[i].name +"<br>$"+items[i].price+ "</button>");
         
         
     }
+    document.writeln("<ol>");
+    document.writeln("<div id='start' class='footer'>Cart</div>");
+    document.writeln("</ol>");
+
 }
   
 
@@ -117,6 +81,8 @@ $('#item-Banana').click(function(items){
     debugger;
     total.push(.65);
     checkout.push("1 Banana at $");
+    item = "A Banana at $.65";
+    addItem(item)
 
 });
 $('#item-Apple').click(function(items){
@@ -124,6 +90,8 @@ $('#item-Apple').click(function(items){
     debugger;
     total.push(1.00);
     checkout.push("1 Apple at $");
+    item = "A Apple at $1.00";
+    addItem(item)
 
 });
 $('#item-Grape').click(function(items){
@@ -131,6 +99,8 @@ $('#item-Grape').click(function(items){
     debugger;
     total.push(.25);
     checkout.push("1 Grape at $");
+    item = "A Grape at $.25";
+    addItem(item)
 
 });
 $('#item-Lemon').click(function(items){
@@ -138,6 +108,8 @@ $('#item-Lemon').click(function(items){
     debugger;
     total.push(.50);
     checkout.push("1 Lemon at $");
+    item = "A Lemon at $.50";
+    addItem(item)
 
 });
 $('#item-Lime').click(function(items){
@@ -145,6 +117,8 @@ $('#item-Lime').click(function(items){
     debugger;
     total.push(.45);
     checkout.push("1 Lime at $");
+    item = "A Lime at $.45";
+    addItem(item)
 
 });
 $('#item-Mango').click(function(items){
@@ -152,6 +126,8 @@ $('#item-Mango').click(function(items){
     debugger;
     total.push(1.50);
     checkout.push("1 Mango at $");
+    item = "A Mango at $1.50";
+    addItem(item)
 
 });
 $('#item-Cherry').click(function(items){
@@ -159,6 +135,8 @@ $('#item-Cherry').click(function(items){
     debugger;
     total.push(.15);
     checkout.push("1 Cherry at $");
+    item = "A Cherry at $.15";
+    addItem(item)
 
 });
 $('#item-Orange').click(function(items){
@@ -166,6 +144,8 @@ $('#item-Orange').click(function(items){
     debugger;
     total.push(.70);
     checkout.push("1 Orange at $");
+    item = "A Orange at $.70";
+    addItem(item)
 
 });
 $('#item-Peach').click(function(items){
@@ -173,6 +153,8 @@ $('#item-Peach').click(function(items){
     debugger;
     total.push(1.20);
     checkout.push("1 Peach at $");
+    item = "A Peach at $1.20";
+    addItem(item)
 
 });
 $('#item-Kiwi').click(function(items){
@@ -180,6 +162,8 @@ $('#item-Kiwi').click(function(items){
     debugger;
     total.push(.90);
     checkout.push("1 Kiwi at $");
+    item = "A Kiwi at $.90";
+    addItem(item)
 
 });
 
@@ -209,3 +193,11 @@ function checkOut(){{
 
 };
 }
+
+function addItem(message) {
+  var a = document.getElementById('start');
+  var b = '<li>' +message +'</li>';
+  a.insertAdjacentHTML('beforeend', b);
+  
+}
+
