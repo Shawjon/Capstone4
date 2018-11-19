@@ -99,7 +99,7 @@ var total =[];
 
 function makeList(items){
     document.writeln("<span class='top'>Street Corner Bodega?</span>");
-    document.writeln("<span class='top' id='right'>Check out</span>");
+    document.writeln("<span class='top' id='right' onclick='checkOut()'>Check out</span>");
     for (var i = 0; i < items.length; i++) {
         
         document.writeln("<div class='button' id='item-" + items[i].name + "'>" + items[i].name +"<br>$"+items[i].price+ "</div>");
@@ -185,16 +185,27 @@ $('#item-Kiwi').click(function(items){
 
 
 
-$("#right").click(function(){
+function checkOut(){{
     alert("This is the checkout");
-    //document.body.innerHTML = "";
+    
+    var subtotal = 0;
+    var tax = 0;
+    var grandtotal = 0;
     debugger;
     for (var i = 0; i < checkout.length; i++) {
         
         document.writeln("<div>" + checkout[i]+ total[i]+ "</div>");
-        
+        subtotal = subtotal + total[i];
         
     }
-    
+    //debugger;
+    document.writeln("<div>----------------------------------------------</div>");
+    document.writeln("<div>" +"Sub total: "+ subtotal.toFixed(2)+  "</div>");
+    tax = subtotal * .06;
+    document.writeln("<div>" +"Tax: "+ tax.toFixed(2)+  "</div>");
+    grandtotal = subtotal + tax;
+    document.writeln("<div>" +"Grand total: "+ grandtotal.toFixed(2)+  "</div>");
 
-});
+
+};
+}
